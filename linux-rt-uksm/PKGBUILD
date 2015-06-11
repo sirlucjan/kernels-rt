@@ -57,14 +57,14 @@ pkgbase=linux-rt-uksm
 pkgname=('linux-rt-uksm' 'linux-rt-uksm-headers' 'linux-rt-uksm-docs')
 _kernelname=-rt-uksm
 _srcname=linux-4.0
-pkgver=4.0.4
-pkgrel=2
+pkgver=4.0.5
+pkgrel=1
 arch=('i686' 'x86_64')
 url="http://kerneldedup.org/"
 license=('GPL2')
 options=('!strip')
 makedepends=('kmod' 'inetutils' 'bc')
-_rtpatchver=rt1
+_rtpatchver=rt2
 _uksmvernel="0.1.2.4-beta"
 _uksmname="v4.0"
 _bfqpath="http://algo.ing.unimo.it/people/paolo/disk_sched/patches/4.0.0-v7r8"
@@ -86,7 +86,6 @@ source=("http://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'linux-rt-uksm.preset'
         'change-default-console-loglevel.patch'
         'config' 'config.x86_64'
-        'md-raid0-fix-restore-to-sector-variable-in-raid0_mak.patch'
         'fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT.patch'
         'i915-bogus-warning-from-i915-when-running-on-PREEMPT_RT.patch'
         'fix-typo-in-intel-sst.patch')
@@ -106,11 +105,7 @@ prepare() {
     # remove this when a Kconfig knob is made available by upstream
     # (relevant patch sent upstream: https://lkml.org/lkml/2011/7/26/227)
         msg "Patching set DEFAULT_CONSOLE_LOGLEVEL to 4"
-        patch -p1 -i "${srcdir}/change-default-console-loglevel.patch"
-        
-    ### Fix a problem with raid0
-        msg "Add md-raid0-fix-restore-to-sector-variable-in-raid0_mak.patch"
-        patch -p1 -i "${srcdir}/md-raid0-fix-restore-to-sector-variable-in-raid0_mak.patch"    
+        patch -p1 -i "${srcdir}/change-default-console-loglevel.patch"  
 
     ### A patch to fix a problem that ought to be fixed in the NVIDIA source code.
     # Stops X from hanging on certain NVIDIA cards
@@ -473,9 +468,9 @@ package_linux-rt-uksm-docs() {
 
 sha512sums=('ce13d2c1c17908fd9a4aa42bb6348a0cb13dd22e560bd54c61b8bfdf62726d6095f130c59177a2fe4793b7dc399481bf10d3556d1d571616000f180304e5a995'
             'SKIP'
-            '403a0c9a4bee314cd0f46f3d9bf9122e61d02ff4f9b91027b44718beb5ba2970fdec665f189ba89bd169984a96120f1478ebbf4eaa9872939c11b6b5024c5bb7'
+            '377371371752eb706053282ee296f82b3af0c3cf84c346091b1e347c8d00fcf6787c5b51c76955af3f61e9c20c30035b110368ee3ba2587871f0dbc92826de32'
             'SKIP'
-            'abe013c4e3a8750cf37ac042ae4da54e50b4334726f43071e4d515ab5fec4906931c9d2ac44c779085730205cd5259f102e1bbcdeff79a4edc48c02918284565'
+            '7a051bc6c7436dc009d708e4ad6dfd269787e855473f31268a141b1357b8ab523f6a47776689598350065fcc5e12fdc4e89a76ee45eb60a4033e99bfedffd705'
             'SKIP'
             'ce46c47a1685f5014f4ada55b9ee6292255a383f83c04ac84ae922d16fef0687ebf09e7a6b211f23c6d1156312ef812c950805979893792f3e19b6c643d2fb81'
             '1a08e834c4e90a7f9da77460bda1ed0efa9b331811521520402b0d094de3a1155d6e7ddbcbfcbefeef92b5468c56960750f6568cd73114a2a87a9d8a39a63fe8'
@@ -486,7 +481,6 @@ sha512sums=('ce13d2c1c17908fd9a4aa42bb6348a0cb13dd22e560bd54c61b8bfdf62726d6095f
             'd9d28e02e964704ea96645a5107f8b65cae5f4fb4f537e224e5e3d087fd296cb770c29ac76e0ce95d173bc420ea87fb8f187d616672a60a0cae618b0ef15b8c8'
             'd86fee21ba0440f512989ff9d08909967a57ee95837512096fd8010cd75bc797fcaff0762b781f1aa84d896d7b717259deb87e6f4379fecb033ccdf073fac81d'
             '5608d6f8ab4386adf382da03221a8515e27b7941d010de2b818f91ef4c4d5225e953d6bf7f059de99c9d03557068ea102fc7e302bb9c7854490930fad5342448'
-            '43b9bd7cf5bac66599f8338d219052c80ea56dd2d55a670e63148956e0a2296fc56aee7977a4d217a56d56769bf38db482399ed1728f0540ad7db519dbdc3a2c'
             '326dc571c072d4c47381852f16c00c8a7b27d11a5e6ff0f60f5e3a21d4a833c1e467dda1c2a5c04a6611af48bb6ef017f9183ea4ee578aab1a07e91e44d4e528'
             '6d24e020de0f5955c4064475ebbce1dcb146563445768cb5e66af9a0d5fddb8b1d5f9d5d2d5165a3b1938e26867fe78ff4b19088658340cba394b0c4f994963d'
             '52a48ba5410babc9ea1880da24a82865d7c7914248cdb14600f5201b3f9241baa7aeb828f47a9c6c2ff7788a20e41e55f41530e7ef49dc82b8926501dcd1a615')

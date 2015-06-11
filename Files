@@ -10,8 +10,7 @@
 │   ├── fix-typo-in-intel-sst.patch
 │   ├── i915-bogus-warning-from-i915-when-running-on-PREEMPT_RT.patch
 │   ├── linux-rt-bfq.install
-│   ├── linux-rt-bfq.preset
-│   └── md-raid0-fix-restore-to-sector-variable-in-raid0_mak.patch
+│   └── linux-rt-bfq.preset
 └── linux-rt-uksm
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
@@ -22,7 +21,6 @@
     ├── i915-bogus-warning-from-i915-when-running-on-PREEMPT_RT.patch
     ├── linux-rt-uksm.install
     ├── linux-rt-uksm.preset
-    ├── md-raid0-fix-restore-to-sector-variable-in-raid0_mak.patch
     └── uksm-0.1.2.4-beta-for-linux-v4.0.patch
 
-2 directories, 23 files
+2 directories, 21 files
