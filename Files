@@ -7,8 +7,6 @@
 │   ├── config
 │   ├── config.x86_64
 │   ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT.patch
-│   ├── fix-typo-in-intel-sst.patch
-│   ├── i915-bogus-warning-from-i915-when-running-on-PREEMPT_RT.patch
 │   ├── linux-rt-bfq.install
 │   └── linux-rt-bfq.preset
 └── linux-rt-uksm
@@ -17,10 +15,8 @@
     ├── config
     ├── config.x86_64
     ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT.patch
-    ├── fix-typo-in-intel-sst.patch
-    ├── i915-bogus-warning-from-i915-when-running-on-PREEMPT_RT.patch
     ├── linux-rt-uksm.install
     ├── linux-rt-uksm.preset
     └── uksm-0.1.2.4-beta-for-linux-v4.0.patch
 
-2 directories, 21 files
+2 directories, 17 files
