@@ -57,14 +57,15 @@ pkgbase=linux-rt-uksm
 pkgname=('linux-rt-uksm' 'linux-rt-uksm-headers' 'linux-rt-uksm-docs')
 _kernelname=-rt-uksm
 _srcname=linux-4.0
-pkgver=4.0.5
-pkgrel=2
+_pkgver=4.0.5
+_rtpatchver=rt3
+pkgver=${_pkgver}_${_rtpatchver}
+pkgrel=3
 arch=('i686' 'x86_64')
 url="http://kerneldedup.org/"
 license=('GPL2')
 options=('!strip')
 makedepends=('kmod' 'inetutils' 'bc')
-_rtpatchver=rt3
 _uksmvernel="0.1.2.4-beta"
 _uksmname="v4.0"
 _bfqpath="http://algo.ing.unimo.it/people/paolo/disk_sched/patches/4.0.0-v7r8"
@@ -73,10 +74,10 @@ _gcc_patch="enable_additional_cpu_optimizations_for_gcc_v4.9+_kernel_v3.15+.patc
 
 source=("http://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         "https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.sign"
-        "http://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.xz"
-        "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${pkgver}.sign"
-        "http://www.kernel.org/pub/linux/kernel/projects/rt/4.0/patch-${pkgver}-${_rtpatchver}.patch.xz"
-        "http://www.kernel.org/pub/linux/kernel/projects/rt/4.0/patch-${pkgver}-${_rtpatchver}.patch.sign"
+        "http://www.kernel.org/pub/linux/kernel/v4.x/patch-${_pkgver}.xz"
+        "https://www.kernel.org/pub/linux/kernel/v4.x/patch-${_pkgver}.sign"
+        "http://www.kernel.org/pub/linux/kernel/projects/rt/4.0/patch-${_pkgver}-${_rtpatchver}.patch.xz"
+        "http://www.kernel.org/pub/linux/kernel/projects/rt/4.0/patch-${_pkgver}-${_rtpatchver}.patch.sign"
         #"http://kerneldedup.org/download/uksm/${_uksmvernel}/uksm-${_uksmvernel}-for-${_uksmname}.patch" # website often went down
         "uksm-${_uksmvernel}-for-linux-${_uksmname}.patch"
         "${_bfqpath}/0001-block-cgroups-kconfig-build-bits-for-BFQ-v7r8-4.0.patch"
@@ -93,11 +94,11 @@ prepare() {
 
     ### Add upstream patch
         msg "Add upstream patch"
-        patch -Np1 -i "${srcdir}/patch-${pkgver}"
+        patch -Np1 -i "${srcdir}/patch-${_pkgver}"
         
     ### Add rt patch
         msg "Add rt patch"
-        patch -Np1 -i "${srcdir}/patch-${pkgver}-${_rtpatchver}.patch" 
+        patch -Np1 -i "${srcdir}/patch-${_pkgver}-${_rtpatchver}.patch" 
     
     ### set DEFAULT_CONSOLE_LOGLEVEL to 4 (same value as the 'quiet' kernel param)
     # remove this when a Kconfig knob is made available by upstream
