@@ -2,7 +2,6 @@
 ├── Files
 ├── README.md
 ├── linux-rt-bfq
-│   ├── 0000-fix_potential_deadlock_in_reqsk_queue_unlink.patch
 │   ├── PKGBUILD
 │   ├── change-default-console-loglevel.patch
 │   ├── config
@@ -22,4 +21,4 @@
     ├── linux-rt-uksm.preset
     └── uksm-0.1.2.4-beta-for-linux-v4.0.patch
 
-2 directories, 20 files
+2 directories, 19 files
