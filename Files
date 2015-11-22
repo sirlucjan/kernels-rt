@@ -1,24 +1,13 @@
 .
 ├── Files
 ├── README.md
-├── linux-rt-bfq
-│   ├── PKGBUILD
-│   ├── change-default-console-loglevel.patch
-│   ├── config
-│   ├── config.x86_64
-│   ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT.patch
-│   ├── linux-rt-bfq.install
-│   └── linux-rt-bfq.preset
-└── linux-rt-uksm
-    ├── 0004-block-loop-convert-to-per-device-workqueue.patch
-    ├── 0005-block-loop-avoiding-too-many-pending-per-work-I-O.patch
+└── linux-rt-bfq
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
     ├── config
     ├── config.x86_64
     ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT.patch
-    ├── linux-rt-uksm.install
-    ├── linux-rt-uksm.preset
-    └── uksm-0.1.2.4-beta-for-linux-v4.0.patch
+    ├── linux-rt-bfq.install
+    └── linux-rt-bfq.preset
 
-2 directories, 19 files
+1 directory, 9 files
