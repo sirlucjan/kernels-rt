@@ -2,6 +2,10 @@
 ├── Files
 ├── README.md
 └── linux-rt-bfq
+    ├── 0004-sdhci-revert.patch
+    ├── 0006-tpmdd-devel-v3-base-platform-fix-binding-for-drivers-without-probe-callback.patch
+    ├── 0007-4.4-revert-btrfs.patch
+    ├── 0008-4.4-revert-xfs.patch
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
     ├── config
@@ -10,4 +14,4 @@
     ├── linux-rt-bfq.install
     └── linux-rt-bfq.preset
 
-1 directory, 9 files
+1 directory, 13 files
