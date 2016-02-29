@@ -3,8 +3,6 @@
 ├── README.md
 └── linux-rt-bfq
     ├── 0004-sdhci-revert.patch
-    ├── 0007-4.4-revert-btrfs.patch
-    ├── 0008-4.4-revert-xfs.patch
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
     ├── config
@@ -13,4 +11,4 @@
     ├── linux-rt-bfq.install
     └── linux-rt-bfq.preset
 
-1 directory, 12 files
+1 directory, 10 files
