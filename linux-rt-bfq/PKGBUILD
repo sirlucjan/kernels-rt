@@ -81,6 +81,8 @@ source=("http://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
         'linux-rt-bfq.preset'
         'change-default-console-loglevel.patch'
         'config' 'config.x86_64'
+        '0005-BFQ-Fix.patch'
+        '0006-BFQ-Fix.patch'
         'fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT-160319.patch')
         
 prepare() {
@@ -107,7 +109,7 @@ prepare() {
 
     ### Patch source with BFQ
         msg "Patching source with BFQ patches"
-        for p in "${srcdir}"/000{1,2,3,4}-*BFQ*.patch; do
+        for p in "${srcdir}"/000{1,2,3,4,5,6}-*BFQ*.patch; do
         msg " $p"
         patch -Np1 -i "$p"
         done
@@ -472,6 +474,8 @@ sha512sums=('a48a065f21e1c7c4de4cf8ca47b8b8d9a70f86b64e7cfa6e01be490f78895745b9c
             'd9d28e02e964704ea96645a5107f8b65cae5f4fb4f537e224e5e3d087fd296cb770c29ac76e0ce95d173bc420ea87fb8f187d616672a60a0cae618b0ef15b8c8'
             '3fba4c1c172aa823c58901656fcbd30241f7e60486619d1095447e4c902b94e4a9f568d68a124001951cff6e873ce55f338975808b30e3ba2ee2380561660133'
             'a6200ad0c8bc44b97233c0cbd4c419c37727f06e735f2c6b60a28e94bfdc6d31d7f26d24f9f898c62fceefe08dfd3bdbd5d71acf2b5fcedbda8ea3881d284daa'
+            '3889679e288d51f6fecc7ed6581ccde34acbf1e4861f5c9ca237a1ad13158502757d3fc457d7b6caf1c8c99c9dba842265004154a71cffb8ec14e1030e49e312'
+            '3c3f3b6407d9a1a63cd91c2b5c35e6c932afa5bf33f1b2e8a530dbd9eacda8c8f956616c4cc9228657624da58e354ba5714252237d84ff3386fd65cf44f06ddc'
             '86f717f596c613db3bc40624fd956ed379b8a2a20d1d99e076ae9061251fe9afba39cf536623eccd970258e124b8c2c05643e3d539f37bd910e02dc5dd498749')
             
 validpgpkeys=(
