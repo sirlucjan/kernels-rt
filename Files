@@ -2,6 +2,7 @@
 ├── Files
 ├── README.md
 └── linux-rt-bfq
+    ├── 0001-x86-fpu-Fix-invalid-FPU-ptrace-state-after-execve.patch
     ├── 0005-BFQ-Fix.patch
     ├── 0006-BFQ-Fix.patch
     ├── 99-linux.hook
@@ -10,7 +11,6 @@
     ├── config
     ├── config.x86_64
     ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT-160319.patch
-    ├── fix_race_condition_in_packet_set_ring.diff
     ├── linux.install
     ├── linux.preset
     └── net_handle_no_dst_on_skb_in_icmp6_send.patch
