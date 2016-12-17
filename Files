@@ -3,8 +3,7 @@
 ├── README.md
 └── linux-rt-bfq
     ├── 0001-x86-fpu-Fix-invalid-FPU-ptrace-state-after-execve.patch
-    ├── 0005-BFQ-Fix.patch
-    ├── 0006-BFQ-Fix.patch
+    ├── 0005-BFQ-update-to-v8r6.patch
     ├── 99-linux.hook
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
@@ -15,4 +14,4 @@
     ├── linux.preset
     └── net_handle_no_dst_on_skb_in_icmp6_send.patch
 
-1 directory, 14 files
+1 directory, 13 files
