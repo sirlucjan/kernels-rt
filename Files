@@ -3,7 +3,6 @@
 ├── README.md
 └── linux-rt-bfq
     ├── 0001-x86-fpu-Fix-invalid-FPU-ptrace-state-after-execve.patch
-    ├── 0005-BFQ-update-to-v8r7.patch
     ├── 99-linux.hook
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
@@ -11,7 +10,6 @@
     ├── config.x86_64
     ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT-160319.patch
     ├── linux.install
-    ├── linux.preset
-    └── net_handle_no_dst_on_skb_in_icmp6_send.patch
+    └── linux.preset
 
-1 directory, 13 files
+1 directory, 11 files
