@@ -4,7 +4,8 @@
 └── linux-rt-bfq
     ├── 0001-tty-n_hdlc-get-rid-of-racy-n_hdlc_tbuf.patch
     ├── 0005-BFQ-update-to-v8r8.patch
-    ├── 99-linux.hook
+    ├── 0006-BFQ-bugfix.patch
+    ├── 90-linux.hook
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
     ├── config
@@ -13,4 +14,4 @@
     ├── linux.install
     └── linux.preset
 
-1 directory, 12 files
+1 directory, 13 files
