@@ -3,7 +3,7 @@
 ├── README.md
 └── linux-rt-bfq
     ├── 0005-BFQ-update-to-v8r8.patch
-    ├── 0006-BFQ-bugfix.patch
+    ├── 0006-BFQ-update-to-v8r9.patch
     ├── 90-linux.hook
     ├── PKGBUILD
     ├── change-default-console-loglevel.patch
