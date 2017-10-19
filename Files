@@ -4,11 +4,10 @@
 └── linux-rt-bfq
     ├── 90-linux.hook
     ├── PKGBUILD
-    ├── change-default-console-loglevel.patch
-    ├── config
+    ├── config.i686
     ├── config.x86_64
     ├── fix-race-in-PRT-wait-for-completion-simple-wait-code_Nvidia-RT-160319.patch
     ├── linux.install
     └── linux.preset
 
-1 directory, 10 files
+1 directory, 9 files
