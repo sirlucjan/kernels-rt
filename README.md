@@ -2,3 +2,5 @@
 
 - linux-rt-bfq
 
+- linux-rt-bfq-git
+
