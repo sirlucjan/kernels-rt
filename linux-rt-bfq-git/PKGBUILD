@@ -59,8 +59,8 @@ pkgbase=linux-rt-bfq-git
 # pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
 _major=4.16
 _srcname=linux-rt-devel
-pkgver=4.16.15.7.0.g8d30033e24df
-pkgrel=2
+pkgver=4.16.18.9.0.g052098993f7f
+pkgrel=1
 arch=('x86_64')
 url="https://github.com/Algodev-github/bfq-mq/"
 license=('GPL2')
@@ -94,7 +94,6 @@ source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#br
          # standard config files for mkinitcpio ramdisk
         'linux.preset'
         '0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch'
-        '0002-ACPI-watchdog-Prefer-iTCO_wdt-on-Lenovo-Z50-70.patch'
         '0003-Revert-drm-i915-edp-Allow-alternate-fixed-mode-for-e.patch')
         
 _kernelname=${pkgbase#linux}
@@ -114,10 +113,6 @@ prepare() {
     ### Disable USER_NS for non-root users by default
         msg "Disable USER_NS for non-root users by default"
         patch -Np1 -i ../0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
-    
-    ### Fix https://bugs.archlinux.org/task/56780
-        msg "Fix #56780"
-        patch -Np1 -i ../0002-ACPI-watchdog-Prefer-iTCO_wdt-on-Lenovo-Z50-70.patch
     
     ### Fix https://bugs.archlinux.org/task/56711
         msg "Fix #56711"
@@ -417,5 +412,4 @@ sha512sums=('SKIP'
             '6346b66f54652256571ef65da8e46db49a95ac5978ecd57a507c6b2a28aee70bb3ff87045ac493f54257c9965da1046a28b72cb5abb0087204d257f14b91fd74'
             '2dc6b0ba8f7dbf19d2446c5c5f1823587de89f4e28e9595937dd51a87755099656f2acec50e3e2546ea633ad1bfd1c722e0c2b91eef1d609103d8abdc0a7cbaf'
             '26619b938a47c841f0c480a113cfbb1ee6f1121c21dfecbe246c1f7af7697f86cfb8253f09966eab2e386734ce4ad156159babdba4365c2f199c369c3d7e8ee8'
-            'f6aed92697c35e7919a0d784185e7af15b6be2762e3dd235267ca9744a826ac693d0ffcb07b9d1cc8571f57d518c1ce1c276cf7677e8375188f05f71d4added0'
             'cc8852b089aa24f588ad1af726503ecd1012ad7e1cbc47ea77f03a5f7aecd25306d40f2e16b8a1afeafe7e2e97b6b6840c9f462ed7be358090117e2e024df1bd')
