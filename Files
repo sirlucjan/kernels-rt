@@ -3,6 +3,7 @@
 ├── linux-rt-bfq
 │   ├── 0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
 │   ├── 0002-drm-i915-Increase-LSPCON-timeout.patch
+│   ├── 0003-HID-core-fix-grouping-by-application.patch
 │   ├── 60-linux.hook
 │   ├── 90-linux.hook
 │   ├── 99-linux.hook
@@ -14,6 +15,7 @@
 ├── linux-rt-bfq-git
 │   ├── 0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
 │   ├── 0002-drm-i915-Increase-LSPCON-timeout.patch
+│   ├── 0003-HID-core-fix-grouping-by-application.patch
 │   ├── 60-linux.hook
 │   ├── 90-linux.hook
 │   ├── 99-linux.hook
@@ -24,4 +26,4 @@
 │   └── PKGBUILD
 └── README.md
 
-2 directories, 22 files
+2 directories, 24 files
