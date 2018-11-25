@@ -86,20 +86,20 @@ source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#br
          # standard config files for mkinitcpio ramdisk
         'linux.preset'
         '0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch')
-        
+
 _kernelname=${pkgbase#linux}
-: ${_kernelname:=-rt-bfq} 
+: ${_kernelname:=-rt-bfq}
 
 
 pkgver() {
   cd "${_srcname}"
 
   git describe --long --tags | sed 's/^v//;s/rt//;s/-/./g'
-} 
+}
 
 prepare() {
     cd ${_srcname}
-    
+
     ### Setting version
         msg2 "Setting version..."
         scripts/setlocalversion --save-scmversion
@@ -124,7 +124,7 @@ prepare() {
     ### Prepared version
         make -s kernelrelease > ../version
         msg2 "Prepared %s version %s" "$pkgbase" "$(<../version)"
-        
+
     ### Optionally use running kernel's config
 	# code originally by nous; http://aur.archlinux.org/packages.php?ID=40191
 	if [ -n "$_use_current" ]; then
@@ -138,7 +138,7 @@ prepare() {
 			warning "Aborting!"
 			exit
 		fi
-	fi    
+	fi
 
 	
     ### Optionally set tickrate to 1000 
@@ -258,7 +258,7 @@ _package() {
   sed "$subst" ../90-linux.hook | install -Dm644 /dev/stdin \
     "$pkgdir/usr/share/libalpm/hooks/90-${pkgbase}.hook"
   sed "$subst" ../99-linux.hook | install -Dm644 /dev/stdin \
-    "$pkgdir/usr/share/libalpm/hooks/99-${pkgbase}.hook"  
+    "$pkgdir/usr/share/libalpm/hooks/99-${pkgbase}.hook"
 
   msg2 "Fixing permissions..."
   chmod -Rc u=rwX,go=rX "$pkgdir"
@@ -341,7 +341,7 @@ _package-headers() {
   msg2 "Adding symlink..."
   mkdir -p "$pkgdir/usr/src"
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase-$pkgver"
-  
+
   msg2 "Fixing permissions..."
   chmod -Rc u=rwX,go=rX "$pkgdir"
 }
@@ -349,7 +349,7 @@ _package-headers() {
 _package-docs() {
     pkgdesc="Kernel hackers manual - HTML documentation that comes with the ${pkgbase/linux/Linux} kernel"
     depends=('linux-rt-bfq-git')
-  
+
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
 
   cd $_srcname
