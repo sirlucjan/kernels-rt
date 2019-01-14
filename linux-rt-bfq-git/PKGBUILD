@@ -27,9 +27,8 @@ _1k_HZ_ticks=y
 _NUMAdisable=y
 
 # Compile ONLY probed modules
-# As of mainline 2.6.32, running with this option will only build the modules
-# that you currently have probed in your system VASTLY reducing the number of
-# modules built and the build time to do it.
+# Build in only the modules that you currently have probed in your system VASTLY
+# reducing the number of modules built and the build time.
 #
 # WARNING - ALL modules must be probed BEFORE you begin making the pkg!
 #
@@ -53,8 +52,8 @@ pkgbase=linux-rt-bfq-git
 # pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
 _major=4.19
 _srcname=linux-rt-devel
-pkgver=4.19.13.10.0.g3350d665f257
-pkgrel=2
+pkgver=4.19.15.12.0.gad6f384a67d7
+pkgrel=1
 arch=('x86_64')
 url="https://github.com/Algodev-github/bfq-mq/"
 license=('GPL2')
