@@ -52,8 +52,8 @@ pkgbase=linux-rt-bfq-git
 # pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
 _major=4.19
 _srcname=linux-rt-devel
-pkgver=4.19.15.12.0.gad6f384a67d7
-pkgrel=6
+pkgver=4.19.15.12.r0.gad6f384a67d7
+pkgrel=1
 arch=('x86_64')
 url="https://github.com/Algodev-github/bfq-mq/"
 license=('GPL2')
@@ -92,7 +92,7 @@ _kernelname=${pkgbase#linux}
 pkgver() {
   cd "${_srcname}"
 
-  git describe --long --tags | sed 's/^v//;s/rt//;s/-/./g'
+  git describe --long --tags | sed 's/^v//;s/rt//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 prepare() {
