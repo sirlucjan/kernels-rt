@@ -53,7 +53,7 @@ pkgbase=linux-rt-bfq-git
 _major=5.2
 _srcname=linux-rt-devel
 pkgver=5.2.rt1.r0.gb47957059cdc
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/"
 license=('GPL2')
@@ -68,6 +68,7 @@ _gcc_patch="enable_additional_cpu_optimizations_for_gcc_v9.1+_kernel_v4.13+.patc
 
 source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#branch=linux-${_major}.y-rt"
         "${_lucjanpath}/ll-patches/${_bfq_patch}"
+        "${_lucjanpath}/bfq-paolo-dev/0001-block-bfq-dev.patch"
         "${_gcc_path}/${_gcc_patch}"
         "${_lucjanpath}/arch-patches/0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch"
         "${_lucjanpath}/arch-patches/0002-ZEN-Add-CONFIG-for-unprivileged_userns_clone.patch"
@@ -382,6 +383,7 @@ done
 
 sha512sums=('SKIP'
             'ab20b4a5d9938b0b00a815c127d85fc8de2f1ad7b0f078fca78f511f4fc688ff9948a8bd225b68f1fe83c9cdce1f2561f689bc4dc319393e2ce6fc598b43ba71'
+            '9cee279423111bfbfcb73e9222172f8d92275543bac15e42e92497d3a7b15b29cd8be9b92b34c3c9f27c222d0a27e92fa6e9b081c97722cbc92e50bad8cfe37e'
             '8d9547ff38096b99d296cdec9875b816960c09db31acebb033e3660ba65475d1f310578282cac74947d75dff844dd22d7e7c2e4ded12368d32314fe145763752'
             '068b9f3bb5112a5684246d0a2ae46bb26d7ad3a642276f5ed37d802b50efc925297d8bd4684eb391676e9a97efbb426b4fcbe6fd751860c3f53d8c0ca7d5a1b2'
             'f714a620d50541fd29199d076f94e68c14049bbb97b131da3b68b13bcc1dd933f62913e8aad2a20e0ad738f2c3cad161dac13d3d4cbfdfcead271f22f09a681e'
