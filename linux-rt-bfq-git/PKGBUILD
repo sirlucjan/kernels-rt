@@ -53,7 +53,7 @@ pkgbase=linux-rt-bfq-git
 _major=5.2
 _srcname=linux-rt-devel
 pkgver=5.2.rt1.r0.gb47957059cdc
-pkgrel=6
+pkgrel=7
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
 license=('GPL2')
@@ -382,7 +382,7 @@ for _p in "${pkgname[@]}"; do
 done
 
 sha512sums=('SKIP'
-            '27412eaf2a69142380d389c714a86e5dfe7ec76f8cf5ce0fb09f5582820f52db7976341c17e8154a9fd6b113797f0a0e1db8e8bcd811bb7d38436b67c24db5ad'
+            '9a39e5d432da75a8dab9fefff86edc2397968250961f3689e4eb16b2091649e4a991b8ffb2959020ba19a6b89d88157a4bdf89bdd61c9b2844bd6953f112c3bc'
             '8d9547ff38096b99d296cdec9875b816960c09db31acebb033e3660ba65475d1f310578282cac74947d75dff844dd22d7e7c2e4ded12368d32314fe145763752'
             '068b9f3bb5112a5684246d0a2ae46bb26d7ad3a642276f5ed37d802b50efc925297d8bd4684eb391676e9a97efbb426b4fcbe6fd751860c3f53d8c0ca7d5a1b2'
             'f714a620d50541fd29199d076f94e68c14049bbb97b131da3b68b13bcc1dd933f62913e8aad2a20e0ad738f2c3cad161dac13d3d4cbfdfcead271f22f09a681e'
