@@ -49,8 +49,8 @@ pkgbase=linux-rt-bfq-git
 # pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
 _major=5.2
 _srcname=linux-rt-devel
-pkgver=5.2.14.rt7.r0.g9586d28fcecc
-pkgrel=3
+pkgver=5.2.17.rt8.r0.g1e9b543152ce
+pkgrel=1
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
 license=('GPL2')
@@ -73,7 +73,6 @@ source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#br
         "${_lucjanpath}/${_bfq_path}/${_bfq_patch}"
         "${_gcc_path}/${_gcc_patch}"
         "${_lucjanpath}/arch-patches-v4/0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch"
-        "${_lucjanpath}/arch-patches-v4/0002-Btrfs-fix-unwritten-extent-buffers-and-hangs-on-futu.patch"
          # the main kernel config files
         'config'
          # pacman hook for depmod
@@ -386,7 +385,6 @@ sha512sums=('SKIP'
             '91e9486d36d30e539e2879f9fa377c4a3d98aa15af8cceed6e28a2fbe9b2f5696183483b342d60a01b636346324a99902e36039ee36d6b65a143378f9cc2be5f'
             '2eb574fbfac6e334d3b06e52e466dbf8e88034515729b6571990b10f75a0fe2a52f188615405c5a695b5820669e595deead44d7961a97c5872359be3435fdf63'
             '77c306f87358a2609c902051aade621492b53f8ffce21c1d04255e04a019b5f6799cfd2a5ce24265d2274d54c945559760534f0c0a2e2eb7a62eeed93ff2dc88'
-            '0f255ed1f55768de0e1006d44b0bbfef174ebce8a85de7f79402b3d47f1c53a30cd23e85c97ca591a6727a2bcbf62fa9f5c13bd23c25f2a9b9bcfe2ec4310e07'
             '8f6cdf859cf1c712749de734bb9ad5769ff03e2c426cdc3adad8db91adc447e8ca050d7752b30108363330e4b6ad881330c4dbcfdf357e87c6848dae409ef1f4'
             '7ad5be75ee422dda3b80edd2eb614d8a9181e2c8228cd68b3881e2fb95953bf2dea6cbe7900ce1013c9de89b2802574b7b24869fc5d7a95d3cc3112c4d27063a'
             '2718b58dbbb15063bacb2bde6489e5b3c59afac4c0e0435b97fe720d42c711b6bcba926f67a8687878bd51373c9cf3adb1915a11666d79ccb220bf36e0788ab7'
