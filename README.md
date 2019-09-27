@@ -1,3 +1,5 @@
+[![Packaging status](https://repology.org/badge/vertical-allrepos/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
+
 # Kernels and modules with RT (RealTime) patch:
 
 - linux-rt-bfq
