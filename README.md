@@ -16,6 +16,8 @@
 
 * [bfq-lucjan-dev](https://github.com/sirlucjan/bfq-mq-lucjan/commits/dev-bfq-on-5.2-lucjan) - latest fixes authored by Paolo Valente and BFQ Team and forked by Piotr Gorski
 
+[![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
+
 ***
 # Download:
 
