@@ -18,6 +18,10 @@
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
 
+###### Some patches for BFQ conflict with patches for BFQ-dev.
+
+###### To use linux-rt-bfq/linux-rt-bfq-git smoothly apply bfq-reverts before bfq-dev patch. Otherwise the kernel will not compile.
+
 ***
 # Download:
 
