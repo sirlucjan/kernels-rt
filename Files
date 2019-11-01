@@ -4,13 +4,8 @@
 │   ├── config
 │   └── PKGBUILD
 ├── linux-rt-bfq-git
-│   ├── 60-linux.hook
-│   ├── 90-linux.hook
-│   ├── 99-linux.hook
 │   ├── config
-│   ├── linux.install
-│   ├── linux.preset
 │   └── PKGBUILD
 └── README.md
 
-2 directories, 11 files
+2 directories, 6 files
