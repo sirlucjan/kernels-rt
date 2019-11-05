@@ -50,7 +50,7 @@ pkgbase=linux-rt-bfq-git
 _major=5.2
 _srcname=linux-rt-devel
 pkgver=5.2.21.rt13.r0.gc94eace2b017
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
 license=('GPL2')
@@ -79,7 +79,7 @@ source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#br
 
 export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
-export KBUILD_BUILD_TIMESTAMP="@${SOURCE_DATE_EPOCH:-$(date +%s)}"
+export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
 pkgver() {
   cd $_srcname
