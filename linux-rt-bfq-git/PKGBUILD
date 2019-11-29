@@ -69,7 +69,7 @@ _bfq_patch="${_major}-${_bfq_path}-${_bfq_ver}-${_bfq_rel}.patch"
 _gcc_path="https://raw.githubusercontent.com/graysky2/kernel_gcc_patch/master"
 _gcc_patch="enable_additional_cpu_optimizations_for_gcc_v9.1+_kernel_v4.13+.patch"
 
-source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/linux-rt-devel.git/#branch=linux-${_major}.y-rt"
+source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/${_srcname}.git/#branch=linux-${_major}.y-rt"
         "${_lucjanpath}/${_bfq_rev_path}/${_bfq_rev_patch}"
         "${_lucjanpath}/${_bfq_path}/${_bfq_patch}"
         "${_gcc_path}/${_gcc_patch}"
