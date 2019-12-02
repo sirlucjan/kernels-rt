@@ -188,7 +188,7 @@ prepare() {
 }
 
 build() {
-  cd ${_srcname}
+  cd $_srcname
 
   make bzImage modules htmldocs
 }
