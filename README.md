@@ -10,9 +10,9 @@
 
 * [bfq improvements](https://groups.google.com/forum/#!forum/bfq-iosched) - latest fixes authored by Paolo Valente and BFQ Team
 
-* [bfq-dev](https://github.com/Algodev-github/bfq-mq/commits/dev-bfq-on-5.2) - latest fixes authored by Paolo Valente and BFQ Team
+* [bfq-dev](https://github.com/Algodev-github/bfq-mq/tree/dev-bfq-on-5.2-EOL) - latest fixes authored by Paolo Valente and BFQ Team
 
-* [bfq-lucjan-dev](https://github.com/sirlucjan/bfq-mq-lucjan/commits/dev-bfq-on-5.2-lucjan) - latest fixes authored by Paolo Valente and BFQ Team and forked by Piotr Gorski
+* [bfq-lucjan-dev](https://github.com/sirlucjan/bfq-mq-lucjan/tree/dev-bfq-on-5.2-lucjan-EOL) - latest fixes authored by Paolo Valente and BFQ Team and forked by Piotr Gorski
 
 * [LL-patches](https://github.com/sirlucjan/kernel-patches/tree/master/5.2/ll-patches) / [LL-patches](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.2/ll-patches) - specific patches authored by Piotr Gorski
 
