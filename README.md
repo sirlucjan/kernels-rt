@@ -10,11 +10,11 @@
 
 * [bfq improvements](https://groups.google.com/forum/#!forum/bfq-iosched) - latest fixes authored by Paolo Valente and BFQ Team
 
-* [bfq-dev](https://github.com/Algodev-github/bfq-mq/tree/dev-bfq-on-5.2-EOL) - latest fixes authored by Paolo Valente and BFQ Team
+* [bfq-dev](https://github.com/Algodev-github/bfq-mq/tree/dev-bfq-on-5.4) - latest fixes authored by Paolo Valente and BFQ Team
 
-* [bfq-lucjan-dev](https://github.com/sirlucjan/bfq-mq-lucjan/tree/dev-bfq-on-5.2-lucjan-EOL) - latest fixes authored by Paolo Valente and BFQ Team and forked by Piotr Gorski
+* [bfq-lucjan-dev](https://github.com/sirlucjan/bfq-mq-lucjan/tree/dev-bfq-on-5.4) - latest fixes authored by Paolo Valente and BFQ Team and forked by Piotr Gorski
 
-* [LL-patches](https://github.com/sirlucjan/kernel-patches/tree/master/5.2/ll-patches) / [LL-patches](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.2/ll-patches) - specific patches authored by Piotr Gorski
+* [LL-patches](https://github.com/sirlucjan/kernel-patches/tree/master/5.4/ll-patches) / [LL-patches](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.4/ll-patches) - specific patches authored by Piotr Gorski
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
 
@@ -22,7 +22,7 @@
 
 ###### To use linux-rt-bfq/linux-rt-bfq-git smoothly apply bfq-reverts before bfq-dev patch. Otherwise the kernel will not compile.
 
-* [bfq-reverts](https://github.com/sirlucjan/kernel-patches/tree/master/5.2/bfq-reverts-sep) / [bfq-reverts](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.2/bfq-reverts-sep) - specific patches authored by Piotr Gorski
+* ~~[bfq-reverts](https://github.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-sep) / [bfq-reverts](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-sep) - specific patches authored by Piotr Gorski~~
 
 ***
 # Download:
