@@ -50,7 +50,7 @@ pkgbase=linux-rt-bfq-git
 _major=5.4
 _srcname=linux-rt-devel
 pkgver=5.4.17.rt9.r0.gaa73e33d1d39
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
@@ -121,7 +121,7 @@ prepare() {
 
     ### Prepared version
         make -s kernelrelease > version
-        echo "Prepared %s version %s" "$pkgbase" "$(<version)"
+        echo "Prepared $pkgbase version $(<version)"
 
     ### Optionally use running kernel's config
 	# code originally by nous; http://aur.archlinux.org/packages.php?ID=40191
