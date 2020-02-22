@@ -50,7 +50,7 @@ pkgbase=linux-rt-bfq-git
 _major=5.4
 _srcname=linux-rt-devel
 pkgver=5.4.19.rt11.r0.g3205ab6b8708
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
@@ -195,7 +195,8 @@ prepare() {
 build() {
   cd $_srcname
 
-  make bzImage modules htmldocs
+  make all
+  make htmldocs
 }
 
 _package() {
