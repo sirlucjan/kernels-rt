@@ -49,7 +49,7 @@ pkgbase=linux-rt-bfq-git
 # pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
 _major=5.4
 _srcname=linux-rt-devel
-pkgver=5.4.22.rt13.r0.gcaadbee20290
+pkgver=5.4.24.rt15.r0.gfa578e9d1e2e
 pkgrel=1
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
@@ -60,6 +60,9 @@ makedepends=('kmod' 'bc' 'libelf' 'git' 'python-sphinx' 'python-sphinx_rtd_theme
              'graphviz' 'imagemagick')
 #_lucjanpath="https://raw.githubusercontent.com/sirlucjan/kernel-patches/master/${_major}"
 _lucjanpath="https://gitlab.com/sirlucjan/kernel-patches/raw/master/${_major}"
+# Some patches for BFQ conflict with patches for BFQ-dev.
+# To use linux-rt-bfq-git smoothly apply bfq-reverts before bfq-dev patch. 
+# Otherwise the kernel will not compile.
 _bfq_rev_path="bfq-reverts-sep"
 _bfq_rev_patch="0001-Revert-block-bfq-do-not-plug-I-O-for-bfq_queues-with.patch"
 _bfq_path="bfq-dev-lucjan"
