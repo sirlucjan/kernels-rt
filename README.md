@@ -22,7 +22,7 @@
 
 ###### To use linux-rt-bfq/linux-rt-bfq-git smoothly apply bfq-reverts before bfq-dev patch. Otherwise the kernel will not compile.
 
-* [bfq-reverts](https://github.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-sep) / [bfq-reverts](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-sep) - specific patches authored by Piotr Gorski
+* [bfq-reverts](https://github.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-all) / [bfq-reverts](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.4/bfq-reverts-all) - specific patches authored by Piotr Gorski
 
 ***
 # Download:
