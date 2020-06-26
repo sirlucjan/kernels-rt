@@ -1,6 +1,6 @@
 .
 ├── Files
-├── linux-rt-bfq
+├── linux-rt-bfq-dev
 │   ├── config
 │   ├── PKGBUILD
 │   └── sphinx-workaround.patch
