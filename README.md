@@ -1,12 +1,12 @@
 # Kernels and modules with RT (RealTime) patch:
 
-- linux-rt-bfq
+- linux-rt-bfq-dev
 
-- linux-rt-bfq-git
+- linux-rt-bfq-dev-git
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
+[![Packaging status](https://repology.org/badge/vertical-allrepos/linux-rt-bfq-dev.svg)](https://repology.org/project/linux-rt-bfq-dev/versions)
 
-###### linux-rt-bfq/linux-rt-bfq-git incorporates:
+###### linux-rt-bfq-dev/linux-rt-bfq-dev-git incorporates:
 
 * [bfq improvements](https://groups.google.com/forum/#!forum/bfq-iosched) - latest fixes authored by Paolo Valente and BFQ Team
 
@@ -16,11 +16,11 @@
 
 * [LL-patches](https://github.com/sirlucjan/kernel-patches/tree/master/5.6/ll-patches) / [LL-patches](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.6/ll-patches) - specific patches authored by Piotr Gorski
 
-[![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq.svg)](https://repology.org/project/linux-rt-bfq/versions)
+[![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq-dev.svg)](https://repology.org/project/linux-rt-bfq-dev/versions)
 
 ###### Some patches for BFQ conflict with patches for BFQ-dev.
 
-###### To use linux-rt-bfq/linux-rt-bfq-git smoothly apply bfq-reverts before bfq-dev patch. Otherwise the kernel will not compile.
+###### To use linux-rt-bfq-dev/linux-rt-bfq-dev-git smoothly apply bfq-reverts before bfq-dev patch. Otherwise the kernel will not compile.
 
 * [bfq-reverts](https://github.com/sirlucjan/kernel-patches/tree/master/5.6/bfq-reverts-all-v2) / [bfq-reverts](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.6/bfq-reverts-all-v2) - specific patches authored by Piotr Gorski
 
