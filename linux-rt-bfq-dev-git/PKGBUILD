@@ -45,8 +45,8 @@ _use_current=
 
 ### Do not edit below this line unless you know what you're doing
 
-pkgbase=linux-rt-bfq-git
-# pkgname=('linux-rt-bfq-git' 'linux-rt-bfq-git-headers' 'linux-rt-bfq-git-docs')
+pkgbase=linux-rt-bfq-dev-git
+# pkgname=('linux-rt-bfq-dev-git' 'linux-rt-bfq-dev-git-headers' 'linux-rt-bfq-dev-git-docs')
 _major=5.6
 _srcname=linux-rt-devel
 pkgver=5.6.17.rt9.r0.g9991a07fc0c2
@@ -61,7 +61,7 @@ makedepends=('kmod' 'bc' 'libelf' 'git' 'python-sphinx' 'python-sphinx_rtd_theme
 #_lucjanpath="https://raw.githubusercontent.com/sirlucjan/kernel-patches/master/${_major}"
 _lucjanpath="https://gitlab.com/sirlucjan/kernel-patches/raw/master/${_major}"
 # Some patches for BFQ conflict with patches for BFQ-dev.
-# To use linux-bfq-git smoothly apply bfq-reverts before bfq-dev patch.
+# To use linux-rt-bfq-dev-git smoothly apply bfq-reverts before bfq-dev patch.
 # Otherwise the kernel will not compile.
 _bfq_rev_path="bfq-reverts-all-v2"
 _bfq_rev_patch="0001-bfq-reverts.patch"
@@ -200,7 +200,9 @@ _package() {
     optdepends=('crda: to set the correct wireless channels of your country'
                 'linux-firmware: firmware images needed for some devices'
                 'modprobed-db: Keeps track of EVERY kernel module that has ever been probed - useful for those of us who make localmodconfig')
-    provides=(VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE)
+    provides=(VIRTUALBOX-GUEST-MODULES WIREGUARD-MODULE linux-rt-bfq-git)
+    replaces=('linux-rt-bfq-git')
+    conflicts=('linux-rt-bfq-git')
 
   cd $_srcname
   local kernver="$(<version)"
@@ -223,7 +225,10 @@ _package() {
 
 _package-headers() {
     pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
-    depends=('linux-rt-bfq-git')
+    depends=('linux-rt-bfq-dev-git')
+    replaces=('linux-rt-bfq-git-headers')
+    conflicts=('linux-rt-bfq-git-headers')
+    provides=('linux-rt-bfq-git-headers')
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
@@ -299,7 +304,10 @@ _package-headers() {
 
 _package-docs() {
     pkgdesc="Documentation for the $pkgdesc kernel"
-    depends=('linux-rt-bfq-git')
+    depends=('linux-rt-bfq-dev-git')
+    replaces=('linux-rt-bfq-git-docs')
+    conflicts=('linux-rt-bfq-git-docs')
+    provides=('linux-rt-bfq-git-docs')
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
