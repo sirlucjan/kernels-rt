@@ -5,8 +5,7 @@
 │   └── PKGBUILD
 ├── linux-rt-bfq-dev-git
 │   ├── config
-│   ├── PKGBUILD
-│   └── sphinx-workaround.patch
+│   └── PKGBUILD
 └── README.md
 
-2 directories, 7 files
+2 directories, 6 files
