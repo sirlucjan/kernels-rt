@@ -18,6 +18,8 @@
 
 * [bfq-lucjan](https://github.com/sirlucjan/kernel-patches/tree/master/5.11/bfq-lucjan) / [bfq-lucjan](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.11/bfq-lucjan) - specific patches authored by Paolo Valente and Piotr Gorski
 
+* [graysky's GCC patch](https://github.com/graysky2/kernel_gcc_patch) - version for gcc v10/v11
+
 * [LL-patches](https://github.com/sirlucjan/kernel-patches/tree/master/5.11/ll-patches) / [LL-patches](https://gitlab.com/sirlucjan/kernel-patches/tree/master/5.11/ll-patches) - specific patches authored by Piotr Gorski
 
 [![latest packaged version(s)](https://repology.org/badge/latest-versions/linux-rt-bfq-dev.svg)](https://repology.org/project/linux-rt-bfq-dev/versions)
