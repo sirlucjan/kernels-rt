@@ -47,9 +47,9 @@ _use_current=
 
 pkgbase=linux-rt-bfq-dev-git
 # pkgname=('linux-rt-bfq-dev-git' 'linux-rt-bfq-dev-git-headers' 'linux-rt-bfq-dev-git-docs')
-_major=5.13
+_major=5.14
 _srcname=linux-rt-devel
-pkgver=5.13.rt1.r0.g7e175e6b5997
+pkgver=5.14.1.rt19.r0.gc3a5c0c4c40d
 pkgrel=3
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
@@ -70,19 +70,18 @@ _lucjanpath="https://gitlab.com/sirlucjan/kernel-patches/raw/master/${_major}"
 #_bfq_rel="r2K210223"
 #_bfq_patch="${_major}-${_bfq_path}-${_bfq_ver}-${_bfq_rel}.patch"
 _bfq_path="bfq-lucjan"
-_bfq_rel="r2K210628v1"
+_bfq_rel="r2K210909v1"
 _bfq_patch="${_major}-${_bfq_path}-${_bfq_rel}.patch"
-_compiler_path="cpu-patches-v2-sep"
+_compiler_path="cpu-patches-sep"
 _compiler_patch="0001-cpu-${_major}-merge-graysky-s-patchset.patch"
 
 source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/${_srcname}.git/#branch=linux-${_major}.y-rt"
         #"${_lucjanpath}/${_bfq_rev_path}/${_bfq_rev_patch}"
         "${_lucjanpath}/${_bfq_path}/${_bfq_patch}"
         "${_lucjanpath}/${_compiler_path}/${_compiler_patch}"
-        "${_lucjanpath}/arch-patches-v2-sep/0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch"
-        "${_lucjanpath}/arch-patches-v2-sep/0002-block-another-attempt-to-fix-discard-merging.patch"
-        "${_lucjanpath}/arch-patches-v2-sep/0003-mm-swapfile-use-percpu_ref-to-serialize-against-conc.patch"
-        "${_lucjanpath}/arch-patches-v2-sep/0004-mm-swap-remove-confusing-checking-for-non_swap_entry.patch"
+        "${_lucjanpath}/arch-patches-v3-sep/0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch"
+        "${_lucjanpath}/arch-patches-v3-sep/0002-Bluetooth-Move-shutdown-callback-before-flushing-tx-.patch"
+        "${_lucjanpath}/arch-patches-v3-sep/0003-watchdog-iTCO_wdt-Fix-detection-of-SMI-off-case.patch"
          # the main kernel config files
         'config')
 
@@ -335,10 +334,9 @@ for _p in "${pkgname[@]}"; do
 done
 
 sha512sums=('SKIP'
-            '6f2f0c7183c53d32950de78044da8b651daf409ee2d266a2c42ab0ef4afa6d1eaf64fa48ad9205424bb3b024a630577164f7cf1a0029da2aa276e2d38c0eece8'
-            'c70ed7f971548c32080bf610f0e0d99c5489bea5262945a486df9b4f0c9bde915078a1b4acd15aed0dc6d2ecee511b5a76f5d47ea88977de17e0c6ceb3cde21c'
-            '98b367f2170dad1ee0e0624852bfde4d669941a07351c6678e69c71465477e2c10a0df4b408767a023be958d7bff5d7a674be4fb8acecb868c05c8ea7cbe1a2c'
-            'a9639412740b9b439d5ebbfcab64c1b6e7bf2c47fee63c5c0d9a7b4509adbac975b6198e2627d5b6d7ac39d32f2c4aee4e372213059cee460c45ebe607f75d27'
-            'c0ff033be7ff2e23a9bb03ad7dfa0ce419b2e44278dbca536aabaa591956847eaa86fb71a583c1f2ea7e31e609dacb09d4c24f461bada9f89eaf9e2c3b4cdbe6'
-            '2ec0130dc43bc1f86fb69b9436a184e18268185282a778c5eeb5c22b701374456fed02ecbc1925b5df0a79f91f2a87bfd0496c664e3cc24a62ec41b16b5cda8c'
-            '5aebb126bfe50bd1ef891aae8395379a231a75ac340d7cbe9f9f06972c9e11c892769bec2e3c39e9672400ec61e22ad604e570709cc17dc6c01afcca7bdf58db')
+            '6b93adf52303ca94a4d27fe52914b1615622a9764a94f39eb32153a38b2504880ff9d225f3b21bd6fa7943d320effacb10fd7f99e799e23024da767a1af75b7a'
+            'b1aef4f4e7350ce8132e019f76a2ac68bee8a46eb981598fbda11402e62a8bcdfd2f49e5b2cc5dcf2e96c88ad047af12d53abb9fda05c9f7acec37879e5240db'
+            '3f8700f9be1ce7049ff15afe6addfe09408fcb0461ad652d5d1795d4ab086837773446a90b85cf02a826d8c073273ebaf38f76495e7164c9af6dd0f7a483fc5d'
+            'cd9acb696f86158dd339298a5a884e10b0014e0d472aef9c28dfed649ef4064f3a8f36060898b0b976badd711b34b1a428152e82a518a1e9495f63d583e62727'
+            'cc843ba2681706ce8045f1c3a1468f671ca135f389ccf567f18d2662e001134f8795b4631b7aff324b4e7c7c2633d52973fe3705573a60564b33362e78cbb9b7'
+            'b6a9676962e04b43fb8a731498520e3ee8105630c840dc885b45c7842805902768f0e05db29bd54b2bf58b1c4e63a12a0edc6bb658ab05640dc6522a8ca20ab3')
