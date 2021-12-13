@@ -43,14 +43,23 @@ _localmodcfg=
 # a new kernel is released, but again, convenient for package bumps.
 _use_current=
 
+### Selecting branch
+# ATTENTION - one of two predefined values should be selected!
+# 'linux-stable-rt' - select stable branch
+# 'linux-rt-devel' - select devel branch
+_srcname='linux-stable-rt'
+# ATTENTION - one of two predefined values should be selected!
+# 'linux-stable-rt' - select stable branch
+# 'linux-rt-devel' - select devel branch
+_branch='linux-stable-rt'
+
 ### Do not edit below this line unless you know what you're doing
 
 pkgbase=linux-rt-bfq-dev-git
 # pkgname=('linux-rt-bfq-dev-git' 'linux-rt-bfq-dev-git-headers' 'linux-rt-bfq-dev-git-docs')
 _major=5.15
-_srcname=linux-rt-devel
-pkgver=5.15.5.rt22.r0.g5d8b36c7ec2b
-pkgrel=3
+pkgver=5.15.7.rt23.r0.g098a6d8590a9
+pkgrel=1
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
@@ -75,18 +84,26 @@ _bfq_patch="${_major}-${_bfq_path}-${_bfq_rel}.patch"
 _compiler_path="cpu-patches-v2-sep"
 _compiler_patch="0001-cpu-${_major}-merge-graysky-s-patchset.patch"
 
-source=("git://git.kernel.org/pub/scm/linux/kernel/git/rt/${_srcname}.git/#branch=linux-${_major}.y-rt"
+if [ "$_branch" = "linux-stable-rt" ]; then
+
+ _rt_source="git://git.kernel.org/pub/scm/linux/kernel/git/rt/${_srcname}.git/#branch=v${_major}-rt"
+
+elif [ "$_branch" = "linux-rt-devel" ]; then
+
+ _rt_source="git://git.kernel.org/pub/scm/linux/kernel/git/rt/${_srcname}.git/#branch=linux-${_major}.y-rt"
+
+fi
+
+source=("${_rt_source}"
         #"${_lucjanpath}/${_bfq_rev_path}/${_bfq_rev_patch}"
         "${_lucjanpath}/${_bfq_path}/${_bfq_patch}"
         "${_lucjanpath}/${_compiler_path}/${_compiler_patch}"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0002-staging-r8188eu-Fix-breakage-introduced-when-5G-code.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0003-PCI-Add-more-NVIDIA-controllers-to-the-MSI-masking-q.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0004-iommu-intel-do-deep-dma-unmapping-to-avoid-kernel-fl.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0005-cpufreq-intel_pstate-ITMT-support-for-overclocked-sy.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0006-Bluetooth-btintel-Fix-bdaddress-comparison-with-garb.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0007-lg-laptop-Recognize-more-models.patch"
-        "${_lucjanpath}/arch-rt-patches-v3-sep/0008-Revert-drm-i915-Implement-Wa_1508744258.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0002-PCI-Add-more-NVIDIA-controllers-to-the-MSI-masking-q.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0003-iommu-intel-do-deep-dma-unmapping-to-avoid-kernel-fl.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0004-cpufreq-intel_pstate-ITMT-support-for-overclocked-sy.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0005-Bluetooth-btintel-Fix-bdaddress-comparison-with-garb.patch"
+        "${_lucjanpath}/arch-patches-v9-sep/0006-lg-laptop-Recognize-more-models.patch"
          # the main kernel config files
         'config')
 
@@ -342,12 +359,10 @@ done
 sha512sums=('SKIP'
             '9fde2d5b778c2b54a4367a0bffe08186cf3e76011dd938f894fb3af03a0fa9a8d1fd26053eade1a878953feb84c52192b6851d8b8eef16ca619fc0312d6f6b97'
             '53fa9b8a6fa451a7d57846d261f9af2de24e6442d2f318dfef899580d85e9cc54fa17267803a4f064eecab8ba3739062bfdf185de0afe119a1c86fe71cf3c711'
-            'b23504c5dfe857f7c7379b21e571d9cac26404da845783b22db38066dc88f56d1a361c6ddeca78b91fdf3dea209fe5f9a26d8a05596e529dc6eceb087b26d799'
-            'c6f4d0343360889bb00e22327c808648c46dd6832c59595e484f3ddd7f38c1866b6807539edec36b176f42e3da6c0bcc009a23e53707976649ae02464f9218a2'
-            '7fb70c729d5bbd5c666f8fbfe0d46657920ee0403f6f830a3a398bced57d0570867232fd1d014fbecce331332c5c14f0701010d7d46155329bd6bb602bf9c96b'
-            '01a350732342a59ae8947ffbf9c741da22f2bf3937535e8261da348a80622c007c6b1e65208945a7680875d96cbba1888d8a7a38e9980446d519bee227b46195'
-            '0c7d5591b2359ab56b8c138d2f8312cfd9e85075ec91fee1acb02e5682e668c5c33d1066c69af838a19984f7458cf159a8069006b79a4cea02416609d6820837'
-            '69e4be2d5d39c1e6179a67526a067558ee3452746ff907c64b098b2b2a090381e267b29b5e677a3219e7ee9027d08a586032d784f2836379d1f929bd0829a4b5'
-            '9b0e7bcfb0039d1048f2ecb70102dfacd5b84889a203e593c492951e97aa7691952c429dec6753c2c72a3ce7bf3c0c0328672c4c3bcefe93197961a31ed0d6cd'
-            '5594a46ec65d188161039b54ca8771466d4a73c4448c6750e8f2405b36d60e8de8ce8cec7577f4adac061f5df60eb28843c77ae75daff0e2e0290b7567e5361e'
+            'fa5eabd0ec3e9661e0aab19eb20030944518ccc2cf31df889115db5b3c18a3846ae157d077ac90d8f3e4e332984c24cabcc470b9190c91e3d382ce67a3ed989c'
+            '0c00b7760ed6daa5506aa032893ac76722061bb140699bd1a0ded8589d1301b3e1b857bd5ad3c344db4a35c3915902a196e67147d238857d7e0c740e109a8da1'
+            '2bf1a3c1eafa6e485ed5e0517641220dbce6ccc0fef242abb74b00a9b7f32fe5350011fdbdf959a61672e81c76a414c4358bd1fbaf28d33c3f4964aade3b4983'
+            '9b14bede21e9979f843b624d0aaca389df93f388fdff9f1361d132aebca31e19b2e47dd1b4e83af0bbaae3a1884ac09a3605d3373cfd48eab0c49a8b11d0165a'
+            '8f2f6e1e3ee9cd58217daf6bf5385865732f2521bd084925d923d5477a294cbadfa60f3955b745c0a33bb97bb7fb0f3b829724930601354551caafbc76544fab'
+            'da2a99e0c6bc593e4e873c9ec7ce99cf31f12100efa6375805d935b2f0e7618d8a22d46929a7f5ff5cc86ed89309b292e698a28a7d288f95448f264f80bb7012'
             '23c4d428014d57da488d4f5f37ff486607631a86a10f045972f6b95c09bdb62c95ba2e5019f8eeef223bdb0459bdf122992eb1a7b2465b9f1a5cf5afd9c9c473')
