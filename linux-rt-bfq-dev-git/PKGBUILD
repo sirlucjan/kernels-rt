@@ -56,18 +56,16 @@ _branch='linux-rt-devel'
 ### Do not edit below this line unless you know what you're doing
 
 pkgbase=linux-rt-bfq-dev-git
-# pkgname=('linux-rt-bfq-dev-git' 'linux-rt-bfq-dev-git-headers' 'linux-rt-bfq-dev-git-docs')
+# pkgname=('linux-rt-bfq-dev-git' 'linux-rt-bfq-dev-git-headers')
 _major=5.18
 pkgver=5.18.rt11.r0.gd1cf9bc165cd
-pkgrel=3
+pkgrel=4
 pkgdesc='Linux RT-BFQ-dev'
 arch=('x86_64')
 url="https://github.com/sirlucjan/bfq-mq-lucjan"
 license=('GPL2')
 options=('!strip')
-makedepends=('bc' 'libelf' 'python-sphinx' 'python-sphinx_rtd_theme'
-             'graphviz' 'imagemagick' 'pahole' 'git' 'cpio' 'perl' 'tar' 'xz'
-             'texlive-latexextra' 'xmlto')
+makedepends=('bc' 'libelf' 'pahole' 'cpio' 'perl' 'tar' 'xz' 'git')
 #_lucjanpath="https://raw.githubusercontent.com/sirlucjan/kernel-patches/master/${_major}"
 _lucjanpath="https://gitlab.com/sirlucjan/kernel-patches/raw/master/${_major}"
 _bfq_name='bfq-lucjan'
@@ -194,7 +192,6 @@ build() {
   cd $_srcname
 
   make all
-  make htmldocs
 }
 
 _package() {
@@ -312,30 +309,7 @@ _package-headers() {
   ln -sr "$builddir" "$pkgdir/usr/src/$pkgbase"
 }
 
-_package-docs() {
-    pkgdesc="Documentation for the $pkgdesc kernel"
-    depends=('linux-rt-bfq-dev-git')
-    replaces=('linux-rt-bfq-git-docs')
-    conflicts=('linux-rt-bfq-git-docs')
-    provides=('linux-rt-bfq-git-docs')
-
-  cd $_srcname
-  local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
-
-  echo "Installing documentation..."
-  local src dst
-  while read -rd '' src; do
-    dst="${src#Documentation/}"
-    dst="$builddir/Documentation/${dst#output/}"
-    install -Dm644 "$src" "$dst"
-  done < <(find Documentation -name '.*' -prune -o ! -type d -print0)
-
-  echo "Adding symlink..."
-  mkdir -p "$pkgdir/usr/share/doc"
-  ln -sr "$builddir/Documentation" "$pkgdir/usr/share/doc/$pkgbase"
-}
-
-pkgname=("$pkgbase" "$pkgbase-headers" "$pkgbase-docs")
+pkgname=("$pkgbase" "$pkgbase-headers")
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
     $(declare -f "_package${_p#$pkgbase}")
